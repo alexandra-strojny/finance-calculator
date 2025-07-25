@@ -1,0 +1,59 @@
+
+import { FinanceEntry } from '../types/financeEntry';
+
+export const useQueryFinanceEntries = (): FinanceEntry[] => {
+  return [
+    {
+      id: '1',
+      startDate: '2025-01-01',
+      endDate: '2025-01-31',
+      savings: {
+        'Emergency Fund': { amount: 5000 },
+        'Vacation Fund': { amount: 1200 }
+      },
+      creditCards: {
+        'Chase Sapphire': { amount: 800 },
+        'Capital One': { amount: 450 }
+      },
+      bills: {
+        'Rent': { amount: 1500 },
+        'Electric': { amount: 120 },
+        'Internet': { amount: 80 }
+      },
+      income: {
+        'Salary': { amount: 4500 },
+        'Freelance': { amount: 800 }
+      },
+      savingsTotal: 6200,
+      creditCardsTotal: 1250,
+      billsTotal: 1700,
+      incomeTotal: 5300
+    },
+    {
+      id: '2',
+      startDate: '2025-02-01',
+      endDate: '2025-02-28',
+      savings: {
+        'Emergency Fund': { amount: 5200 },
+        'Vacation Fund': { amount: 1400 }
+      },
+      creditCards: {
+        'Chase Sapphire': { amount: 600 },
+        'Capital One': { amount: 300 }
+      },
+      bills: {
+        'Rent': { amount: 1500 },
+        'Electric': { amount: 95 },
+        'Internet': { amount: 80 }
+      },
+      income: {
+        'Salary': { amount: 4500 },
+        'Freelance': { amount: 600 }
+      },
+      savingsTotal: 6600,
+      creditCardsTotal: 900,
+      billsTotal: 1675,
+      incomeTotal: 5100
+    }
+  ];
+}
