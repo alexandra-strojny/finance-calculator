@@ -7,7 +7,7 @@ export type FinanceEntry = {
       amount: number;
     };
   };
-  creditCards: {
+  expenses: {
     [key: string]: {
       amount: number;
     }
@@ -23,7 +23,11 @@ export type FinanceEntry = {
     }
   };
   savingsTotal: number;
-  creditCardsTotal: number;
+  expensesTotal: number;
   billsTotal: number;
   incomeTotal: number;
+  // Firebase-specific fields
+  userId?: string;
+  createdAt?: Date;
+  updatedAt?: Date;
 }

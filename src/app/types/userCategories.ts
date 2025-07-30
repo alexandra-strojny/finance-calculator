@@ -1,6 +1,6 @@
 export type UserCategories = {
   savings: string[];
-  creditCards: string[];
+  expenses: string[];
   bills: string[];
   income: string[];
 }

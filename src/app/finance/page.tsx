@@ -1,4 +1,9 @@
+import { useQueryFinanceEntries } from "../hooks/useQueryFinanceEntries";
+import { FinanceEntryCard } from "./FinanceEntryCard";
+
 export default function Finance() {
+  const financeEntries = useQueryFinanceEntries();
+
   return (
     <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen pb-10 sm:pb-4">
       <main className="flex flex-col gap-8 row-start-2 items-start w-full max-w-6xl">
@@ -36,56 +41,16 @@ export default function Finance() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 w-full">
           {/* Recent Transactions */}
-          <div className="bg-white shadow-md rounded-lg p-6">
-            <h2 className="text-xl font-semibold mb-4">Recent Transactions</h2>
-            <div className="space-y-4">
-              <div className="flex justify-between items-center border-b pb-2">
-                <div>
-                  <p className="font-medium">Grocery Store</p>
-                  <p className="text-sm text-gray-500">Food & Dining</p>
-                </div>
-                <p className="text-red-600 font-semibold">-$89.45</p>
-              </div>
-              
-              <div className="flex justify-between items-center border-b pb-2">
-                <div>
-                  <p className="font-medium">Salary Deposit</p>
-                  <p className="text-sm text-gray-500">Income</p>
-                </div>
-                <p className="text-green-600 font-semibold">+$4,500.00</p>
-              </div>
-              
-              <div className="flex justify-between items-center border-b pb-2">
-                <div>
-                  <p className="font-medium">Electric Bill</p>
-                  <p className="text-sm text-gray-500">Utilities</p>
-                </div>
-                <p className="text-red-600 font-semibold">-$156.78</p>
-              </div>
-              
-              <div className="flex justify-between items-center border-b pb-2">
-                <div>
-                  <p className="font-medium">Coffee Shop</p>
-                  <p className="text-sm text-gray-500">Food & Dining</p>
-                </div>
-                <p className="text-red-600 font-semibold">-$12.50</p>
-              </div>
-              
-              <div className="flex justify-between items-center">
-                <div>
-                  <p className="font-medium">Investment Return</p>
-                  <p className="text-sm text-gray-500">Investment</p>
-                </div>
-                <p className="text-green-600 font-semibold">+$245.30</p>
-              </div>
-            </div>
-            
-            <button className="w-full mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
-              View All Transactions
-            </button>
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 w-full mb-8">
+            <FinanceEntryCard financeEntry={financeEntries[0]} />
+            <FinanceEntryCard financeEntry={financeEntries[1]} />
+            <FinanceEntryCard financeEntry={financeEntries[2]} />
           </div>
+          <button className="w-full mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+            View All Transactions
+          </button>
+         
 
           {/* Budget Overview */}
           <div className="bg-white shadow-md rounded-lg p-6">
@@ -146,7 +111,6 @@ export default function Finance() {
               Manage Budget
             </button>
           </div>
-        </div>
 
         {/* Quick Actions */}
         <div className="bg-white shadow-md rounded-lg p-6 w-full">
