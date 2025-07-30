@@ -22,10 +22,6 @@ export type FinanceEntry = {
       amount: number;
     }
   };
-  savingsTotal: number;
-  expensesTotal: number;
-  billsTotal: number;
-  incomeTotal: number;
   // Firebase-specific fields
   userId?: string;
   createdAt?: Date;

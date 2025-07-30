@@ -1,15 +1,21 @@
+'use client';
+
+import { useRouter } from "next/navigation";
 import { useQueryFinanceEntries } from "../hooks/useQueryFinanceEntries";
-import { FinanceEntryCard } from "./FinanceEntryCard";
+import { FinanceEntryCard } from "../components/FinanceEntryCard";
 
 export default function Finance() {
   const financeEntries = useQueryFinanceEntries();
+    const router = useRouter();
 
   return (
     <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen pb-10 sm:pb-4">
       <main className="flex flex-col gap-8 row-start-2 items-start w-full max-w-6xl">
         <div className="flex justify-between items-center w-full mb-8">
           <h1 className="text-3xl font-bold">Dashboard</h1>
-          <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-3 px-4 rounded focus:outline-none focus:shadow-outline">
+          <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-3 px-4 rounded focus:outline-none focus:shadow-outline"
+            onClick={() => router.push('/runFinance')}
+          >
             Run Finances
           </button>
         </div>
